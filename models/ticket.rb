@@ -37,6 +37,10 @@ class Ticket
     SqlRunner.run(sql, values)
   end
 
+
+  ######################################
+          ## CLASS METHODS ##
+  ######################################
   def self.all()
     sql = "SELECT * FROM tickets"
     ticket_data = SqlRunner.run(sql)

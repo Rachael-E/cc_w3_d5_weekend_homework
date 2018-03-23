@@ -13,7 +13,6 @@ film3 = Film.new({ 'title' => 'Thor Ragnarok', 'price' => '10'})
 film1.save
 film2.save
 film3.save
-film2.delete
 ############################################
 customer1 = Customer.new({ 'name' => 'Rachael', 'funds' => '50' })
 customer2 = Customer.new({ 'name' => 'Gordon', 'funds' => '50' })
@@ -31,4 +30,4 @@ ticket2.save
 ticket3.save
 ##########################################
 
-p Film.all
+p film1.customers

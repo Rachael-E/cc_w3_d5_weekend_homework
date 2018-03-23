@@ -1,5 +1,6 @@
 require_relative("../db/sql_runner")
 require_relative("film")
+require_relative("ticket")
 
 class Customer
   attr_reader :name, :id
@@ -36,7 +37,17 @@ class Customer
     SqlRunner.run(sql, values)
   end
 
+  ## show all films for a particular customer ##
+  def films()
+    sql = "SELECT films.* FROM films INNER JOIN tickets ON films.id = tickets.film_id WHERE customer_id = $1"
+    values = [@id]
+    films_data = SqlRunner.run(sql, values)
+    return Film.map_items(films_data)
+  end
 
+######################################
+        ## CLASS METHODS ##
+######################################
   def self.all()
     sql = "SELECT * FROM customers"
     customer_data = SqlRunner.run(sql)
