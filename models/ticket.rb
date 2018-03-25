@@ -13,6 +13,13 @@ class Ticket
     @film_id = options['film_id'].to_i
   end
 
+###################################
+          ## INSTANCE METHODS ##
+###################################
+
+###################################
+              ## CRUD ##
+###################################
   def save()
     sql = "INSERT INTO tickets
     (customer_id, film_id)
@@ -38,9 +45,9 @@ class Ticket
   end
 
 
-  ######################################
+######################################
           ## CLASS METHODS ##
-  ######################################
+######################################
   def self.all()
     sql = "SELECT * FROM tickets"
     ticket_data = SqlRunner.run(sql)

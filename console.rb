@@ -15,7 +15,7 @@ film2.save
 film3.save
 ############################################
 customer1 = Customer.new({ 'name' => 'Rachael', 'funds' => '50' })
-customer2 = Customer.new({ 'name' => 'Gordon', 'funds' => '50' })
+customer2 = Customer.new({ 'name' => 'Kenny', 'funds' => '50' })
 customer3 = Customer.new({ 'name' => 'Rebecca', 'funds' => '20' })
 customer1.save
 customer2.save

@@ -13,6 +13,24 @@ class Customer
 
   end
 
+###################################
+          ## INSTANCE METHODS ##
+###################################
+
+# allow a customer to buy a ticket
+# def buy_ticket(film)
+#   customer.wallet -= film.price
+#
+# end
+
+# check how many tickets a customer bought
+
+
+
+
+###################################
+            ## CRUD ##
+###################################
   def save()
     sql = "INSERT INTO customers
     (name, funds)

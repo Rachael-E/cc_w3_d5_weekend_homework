@@ -13,6 +13,9 @@ class Film
     @price = options['price'].to_i
   end
 
+###################################
+              ## CRUD ##
+###################################
   def save()
     sql = "INSERT INTO films
     (title, price)
@@ -44,9 +47,13 @@ class Film
     return Customer.map_items(customers_data)
   end
 
-  ######################################
+###################################
+          ## INSTANCE METHODS ##
+###################################
+
+######################################
           ## CLASS METHODS ##
-  ######################################
+######################################
   def self.all()
     sql = "SELECT * FROM films"
     film_data = SqlRunner.run(sql)
