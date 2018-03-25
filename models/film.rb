@@ -15,7 +15,7 @@ class Film
 
 ###################################
               ## CRUD ##
-###################################
+  ###################################
   def save()
     sql = "INSERT INTO films
     (title, price)
@@ -38,6 +38,11 @@ class Film
     sql = "DELETE FROM films WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def customer_count()
+    customer_count = self.customers
+    return customer_count.length
   end
 ## Show all customers who have been to see a particular film ##
   def customers()

@@ -18,13 +18,27 @@ class Customer
 ###################################
 
 # allow a customer to buy a ticket
-# def buy_ticket(film)
-#   customer.wallet -= film.price
-#
-# end
+def buy_ticket()
+  film_info = self.films()
+  film_price = film_info.map{|film| film.price}
+  combined_film_price = film_price.sum
+  customer_funds = @funds
+  customer_balance = customer_funds -= film_price.sum
+  return customer_balance
+end
 
+def tickets_bought()
+  tickets_bought = self.tickets
+  return tickets_bought.length
+end
 # check how many tickets a customer bought
 
+def tickets() #return Array of ticket objects for given customer
+  sql = "SELECT * FROM tickets where customer_id = $1"
+  values = [@id]
+  tickets_data = SqlRunner.run(sql, values)
+  return tickets_data.map{|ticket| Ticket.new(ticket)}
+end
 
 
 

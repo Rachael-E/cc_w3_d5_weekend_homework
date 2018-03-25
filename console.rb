@@ -28,6 +28,9 @@ ticket4 = Ticket.new({'customer_id' => customer3.id, 'film_id' => film3.id})
 ticket1.save
 ticket2.save
 ticket3.save
+ticket4.save
 ##########################################
 
-p film1.customers
+# binding.pry# p film1.customers
+p customer3.tickets_bought
+# nil
